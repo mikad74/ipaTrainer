@@ -1,0 +1,21 @@
+* IPA trainer
+- [ ] IPA font
+** Layout
+   - [ ] Homepage
+   - [ ] vowels
+   - [ ] consonants
+   - [ ] everything
+** Back-End
+   - [ ] IPA JSON
+   - [ ] soundfiles
+   - [ ] Server side?
+** Game Page
+   - [ ] Symbol
+   - [ ] Vowel or Consonant
+   - [ ] 3D Description
+   - [ ] Verify Answer
+** Gameify
+   - [ ] Score system
+   - [ ] Save data
+   - [ ] Accounts?
+

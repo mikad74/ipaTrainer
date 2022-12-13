@@ -1,5 +1,5 @@
 * IPA trainer
-- [ ] IPA font
+- [x] IPA font
 ** Layout
    - [ ] Homepage
    - [ ] vowels
@@ -18,4 +18,14 @@
    - [ ] Score system
    - [ ] Save data
    - [ ] Accounts?
+** Gameplay loop
+*** Manner
+**** Vowel:
+***** Location
+***** Height
+***** Roundedness
+**** Consonant:
+***** Place:
+***** Voicing
 
+  

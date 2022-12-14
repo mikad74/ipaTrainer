@@ -29,13 +29,6 @@ function getIpaSymbols() {
       articulation.thirdDimension = symbol.articulation.manner?symbol.articulation.manner:"";
     }
 
-    // const keys = Object.keys(symbol.articulation)
-    // console.log(keys)
-    // const articulation: Articulation = {
-    //   firstDimension: symbol.articulation[keys[0]] ? symbols.articulation[keys[0]] : "",
-    //   secondDimension: symbol.articulation[keys[1]],
-    //   thirdDimension: symbol.articulation[keys[2]] ? symbols.articulation[keys[2]] : "",
-    // }
     symbols.push({
       id: symbol.id,
       symbol: symbol.symbol,

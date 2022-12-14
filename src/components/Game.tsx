@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import generateChoices from "../utils/generateChoices";
 import getIpaSymbols from "../utils/getIpaSymbols";
 import SymbolTypeButtons from "./SymbolTypeButtons";
 import VowelButtons from "./VowelButtons";
@@ -22,11 +23,13 @@ type UpdateStage = (vowel: boolean) => void;
 
 function setupGame() {
   const symbols: Array<ipaEntry> = getIpaSymbols();
+  const choices = generateChoices(symbols);
+  console.log(choices)
   const nextSymbol = () => {
     const randomIndex: number = Math.floor(Math.random() * symbols.length);
     return symbols[randomIndex];
   };
-  return { nextSymbol };
+  return { nextSymbol, choices };
 }
 
 function showAnswer(ipaSymbol: ipaEntry) {
@@ -38,8 +41,8 @@ function showAnswer(ipaSymbol: ipaEntry) {
 }
 
 function Game() {
-  const ipaGame = setupGame();
-  const [ipaSymbol, setIpaSymbol] = useState(ipaGame.nextSymbol());
+  const { nextSymbol, choices } = setupGame();
+  const [ipaSymbol, setIpaSymbol] = useState(nextSymbol());
   const [answer, setAnswer] = useState("");
   const [page, setPage] = useState(0);
   const [isVowel, setIsVowel] = useState(true);
@@ -63,13 +66,11 @@ function Game() {
       <div className="button-container">
         {page === 0 && <SymbolTypeButtons nextPage={nextPage} />}
         {page > 0 && isVowel === true && <VowelButtons page={page} />}
-        {page > 0 && isVowel === false && (
-          <ConsonantButtons page={page} />
-        )}
+        {page > 0 && isVowel === false && <ConsonantButtons page={page} />}
 
         <button
           onClick={() => {
-            setIpaSymbol(ipaGame.nextSymbol());
+            setIpaSymbol(nextSymbol());
           }}
           className="next-symbol-btn btn"
         >

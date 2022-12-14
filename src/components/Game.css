@@ -31,9 +31,10 @@
 }
 
 .button-container {
-  /* height: 35rem; */
   height: auto;
   margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .ipa-prompt {

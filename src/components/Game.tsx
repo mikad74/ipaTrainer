@@ -2,19 +2,30 @@ import React, { useEffect, useState } from "react";
 import getIpaSymbols from "../utils/getIpaSymbols";
 import "./Game.css";
 
-type IpaObject = {
+type Articulation = {
+  firstDimension: string,
+  secondDimension: string,
+  thirdDimension: string,
+}
+
+type ipaEntry = {
   id: number;
-  name: string;
   symbol: string;
+  type: string;
+  articulation: Articulation;
 };
 
 function setupGame() {
-  const symbols: Array<IpaObject> = getIpaSymbols();
+  const symbols: Array<ipaEntry> = getIpaSymbols();
   const nextSymbol = () => {
     const randomIndex: number = Math.floor(Math.random() * symbols.length);
     return symbols[randomIndex];
   };
   return { nextSymbol };
+}
+
+function showAnswer(ipaSymbol: ipaEntry) {
+  return `${ipaSymbol.articulation.firstDimension} ${ipaSymbol.articulation.secondDimension} ${ipaSymbol.articulation.thirdDimension} ${ipaSymbol.type === "vowel"? "vowel": ""}`;
 }
 
 function Game() {
@@ -26,7 +37,7 @@ function Game() {
         <div className="ipa-prompt ipa">{ipaSymbol.symbol}</div>
       </div>
       <div className="answer-container">
-        <div className="answer-prompt">{ipaSymbol.name}</div>
+        <div className="answer-prompt">{showAnswer(ipaSymbol)}</div>
       </div>
       <div className="button-container">
         <button

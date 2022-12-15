@@ -1,11 +1,5 @@
 import IPA from "../data/IPA.json";
 
-type Articulation = {
-  firstDimension: string ;
-  secondDimension: string ;
-  thirdDimension: string ;
-};
-
 function getIpaSymbols() {
   const symbols: Array<{
     id: number;

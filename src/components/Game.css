@@ -50,6 +50,14 @@
   text-align: center;
 }
 
+.incorrect {
+  color: #af0000;
+}
+
+.correct {
+  color: #3e4837;
+}
+
 .btn {
   width: 20rem;
   height: 6rem;

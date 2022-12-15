@@ -303,7 +303,7 @@
     "articulation": {
       "height": "Near-open",
       "place": "central",
-      "roundedness": "vowel"
+      "roundedness": ""
     },
     "audioLink": "/wiki/File:Near-open_central_unrounded_vowel.ogg"
   },
@@ -948,7 +948,7 @@
     "symbol": "ʑ",
     "type": "consonant",
     "articulation": {
-      "manner": "sibilant",
+      "manner": "fricative",
       "place": "alveolo-palatal",
       "voicing": "Voiced"
     },
@@ -1047,7 +1047,7 @@
     "symbol": "z",
     "type": "consonant",
     "articulation": {
-      "manner": "fricative",
+      "manner": "sibilant",
       "place": "alveolar",
       "voicing": "Voiced"
     },
@@ -1058,7 +1058,7 @@
     "symbol": "ʃ",
     "type": "consonant",
     "articulation": {
-      "manner": "fricative",
+      "manner": "sibilant",
       "place": "postalveolar",
       "voicing": "Voiceless"
     },
@@ -1069,7 +1069,7 @@
     "symbol": "ʒ",
     "type": "consonant",
     "articulation": {
-      "manner": "fricative",
+      "manner": "sibilant",
       "place": "postalveolar",
       "voicing": "Voiced"
     },
@@ -1080,7 +1080,7 @@
     "symbol": "ʂ",
     "type": "consonant",
     "articulation": {
-      "manner": "fricative",
+      "manner": "sibilant",
       "place": "retroflex",
       "voicing": "Voiceless"
     },
@@ -1091,7 +1091,7 @@
     "symbol": "ʐ",
     "type": "consonant",
     "articulation": {
-      "manner": "fricative",
+      "manner": "sibilant",
       "place": "retroflex",
       "voicing": "Voiced"
     },
@@ -1334,9 +1334,8 @@
     "type": "consonant",
     "articulation": {
       "manner": "flap",
-      "place": "or",
-      "voicing": "tap",
-      "undefined": "Voiced"
+      "place": "alveolar",
+      "voicing": "Voiced"
     },
     "audioLink": "/wiki/File:Alveolar_tap.ogg"
   },

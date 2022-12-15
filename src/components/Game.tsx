@@ -6,25 +6,10 @@ import VowelButtons from "./VowelButtons";
 import ConsonantButtons from "./ConsonantButtons";
 import "./Game.css";
 
-type Articulation = {
-  firstDimension: string;
-  secondDimension: string;
-  thirdDimension: string;
-};
-
-type ipaEntry = {
-  id: number;
-  symbol: string;
-  type: string;
-  articulation: Articulation;
-};
-
-type UpdateStage = (vowel: boolean) => void;
-
 function setupGame() {
   const symbols: Array<ipaEntry> = getIpaSymbols();
   const choices = generateChoices(symbols);
-  console.log(choices)
+  console.log(choices);
   const nextSymbol = () => {
     const randomIndex: number = Math.floor(Math.random() * symbols.length);
     return symbols[randomIndex];
@@ -40,20 +25,35 @@ function showAnswer(ipaSymbol: ipaEntry) {
   }`;
 }
 
+
 function Game() {
   const { nextSymbol, choices } = setupGame();
   const [ipaSymbol, setIpaSymbol] = useState(nextSymbol());
   const [answer, setAnswer] = useState("");
   const [page, setPage] = useState(0);
   const [isVowel, setIsVowel] = useState(true);
-  const [stage, setStage] = useState<{ page: number; vowel: boolean }>({
-    page: 0,
-    vowel: true,
-  });
+  const [isCorrect, setIsCorrect] = useState<IsCorrect>("pending")
   const nextPage = (vowel: boolean) => {
     setPage((old) => old + 1);
     setIsVowel(vowel);
   };
+  const updateAnswer = (choice: string) => {
+    setAnswer((oldAnswer) => {
+      return oldAnswer + " " + choice
+    })
+  }
+  useEffect(() => {
+    if (page === 4) {
+      const answerString = `${ipaSymbol.articulation.firstDimension} ${ipaSymbol.articulation.secondDimension} ${ipaSymbol.articulation.thirdDimension}`
+      console.log(answerString, answer)
+      if (answerString === answer.trim()) {
+        setIsCorrect("correct")
+      }
+      else {
+        setIsCorrect("incorrect")
+      }
+    }
+  }, [page])
 
   return (
     <div className="game-container">
@@ -61,16 +61,33 @@ function Game() {
         <div className="ipa-prompt ipa">{ipaSymbol.symbol}</div>
       </div>
       <div className="answer-container">
-        <div className="answer-prompt">{answer}</div>
+        <div className={`answer-prompt ${isCorrect}`}>{answer}</div>
       </div>
       <div className="button-container">
         {page === 0 && <SymbolTypeButtons nextPage={nextPage} />}
-        {page > 0 && isVowel === true && <VowelButtons page={page} />}
-        {page > 0 && isVowel === false && <ConsonantButtons page={page} />}
+        {page > 0 && isVowel === true && (
+          <VowelButtons
+            choices={choices.vowels}
+            page={page}
+            nextPage={nextPage}
+            submitAnswer={updateAnswer}
+          />
+        )}
+        {page > 0 && isVowel === false && (
+          <ConsonantButtons
+            choices={choices.consonants}
+            page={page}
+            nextPage={nextPage}
+            submitAnswer={updateAnswer}
+          />
+        )}
 
         <button
           onClick={() => {
+            setAnswer("")
+            setPage(0)
             setIpaSymbol(nextSymbol());
+            setIsCorrect("pending")
           }}
           className="next-symbol-btn btn"
         >

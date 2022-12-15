@@ -1,30 +1,4 @@
-type Articulation = {
-  firstDimension: string;
-  secondDimension: string;
-  thirdDimension: string;
-};
-
-type Choices = {
-  vowels: {
-    height: Array<string>;
-    place: Array<string>;
-    roundedness: Array<string>;
-  };
-  consonants: {
-    manner: Array<string>;
-    place: Array<string>;
-    voicing: Array<string>;
-  };
-};
-
-function generateChoices(
-  symbols: Array<{
-    id: number;
-    symbol: string;
-    type: string;
-    articulation: Articulation;
-  }>
-) {
+function generateChoices(symbols: Array<ipaEntry>) {
   const choices: Choices = {
     vowels: {
       height: [],
@@ -42,7 +16,7 @@ function generateChoices(
       if (
         !choices.vowels.roundedness.includes(symbol.articulation.firstDimension)
       ) {
-        choices.vowels.roundedness.push(symbol.articulation.firstDimension);
+        if(symbol.articulation.firstDimension !== "vowel") choices.vowels.roundedness.push(symbol.articulation.firstDimension);
       } else if (
         !choices.vowels.height.includes(symbol.articulation.secondDimension)
       ) {
@@ -56,7 +30,7 @@ function generateChoices(
       if (
         !choices.consonants.voicing.includes(symbol.articulation.firstDimension)
       ) {
-        choices.consonants.voicing.push(symbol.articulation.firstDimension);
+        if(symbol.articulation.firstDimension) choices.consonants.voicing.push(symbol.articulation.firstDimension);
       } else if (
         !choices.consonants.place.includes(symbol.articulation.secondDimension)
       ) {

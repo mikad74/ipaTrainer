@@ -1,6 +1,6 @@
 import IPA from "../data/IPA.json";
 
-function getIpaSymbols() {
+function getIpaSymbols(ipaSet?: Array<number>) {
   const symbols: Array<{
     id: number;
     symbol: string;
@@ -8,15 +8,18 @@ function getIpaSymbols() {
     articulation: Articulation;
   }> = [];
   IPA.forEach((symbol) => {
+    if (ipaSet && !ipaSet?.includes(symbol.id)) {
+      return
+    }
     const articulation: Articulation = {
       firstDimension: "",
       secondDimension: "",
       thirdDimension: "",
     };
     if (symbol.type === "vowel") {
-      articulation.firstDimension = symbol.articulation.roundedness ? symbol.articulation.roundedness : "" ;
-      articulation.secondDimension = symbol.articulation.height ? symbol.articulation.height: "";
-      articulation.thirdDimension = symbol.articulation.place ? symbol.articulation.place: "";
+      articulation.firstDimension = symbol.articulation.height ? symbol.articulation.height: "";
+      articulation.secondDimension = symbol.articulation.place ? symbol.articulation.place: "";
+      articulation.thirdDimension = symbol.articulation.roundedness ? symbol.articulation.roundedness : "" ;
     } else if (symbol.type === "consonant") {
       articulation.firstDimension = symbol.articulation.voicing? symbol.articulation.voicing: "";
       articulation.secondDimension = symbol.articulation.place?symbol.articulation.place:"";

@@ -1,67 +1,96 @@
 import React, { useEffect, useState } from "react";
-import generateChoices from "../utils/generateChoices";
-import getIpaSymbols from "../utils/getIpaSymbols";
+import generateChoices from "../ipaUtils/generateChoices";
+import getIpaSymbols from "../ipaUtils/getIpaSymbols";
 import SymbolTypeButtons from "./SymbolTypeButtons";
 import VowelButtons from "./VowelButtons";
 import ConsonantButtons from "./ConsonantButtons";
+import playAudio from "./playAudio"
+import getPhoneticsPreset from "../data/presets/phonetics"
 import "./Game.css";
 
 function setupGame() {
-  const symbols: Array<ipaEntry> = getIpaSymbols();
+  // const symbols: Array<ipaEntry> = getIpaSymbols();
+  const [symbols, setSymbols] = useState(getIpaSymbols());
   const choices = generateChoices(symbols);
-  console.log(choices);
   const nextSymbol = () => {
     const randomIndex: number = Math.floor(Math.random() * symbols.length);
     return symbols[randomIndex];
   };
-  return { nextSymbol, choices };
+  const setIpaSet = (ipaSet?: Array<number>) => {
+    setSymbols(getIpaSymbols(ipaSet));
+  };
+  return { nextSymbol, choices, setIpaSet };
 }
-
-function showAnswer(ipaSymbol: ipaEntry) {
-  return `${ipaSymbol.articulation.firstDimension} ${
-    ipaSymbol.articulation.secondDimension
-  } ${ipaSymbol.articulation.thirdDimension} ${
-    ipaSymbol.type === "vowel" ? "vowel" : ""
-  }`;
-}
-
 
 function Game() {
-  const { nextSymbol, choices } = setupGame();
+  const { nextSymbol, choices, setIpaSet } = setupGame();
   const [ipaSymbol, setIpaSymbol] = useState(nextSymbol());
   const [answer, setAnswer] = useState("");
   const [page, setPage] = useState(0);
   const [isVowel, setIsVowel] = useState(true);
-  const [isCorrect, setIsCorrect] = useState<IsCorrect>("pending")
+  const [isCorrect, setIsCorrect] = useState<IsCorrect>("pending");
   const nextPage = (vowel: boolean) => {
     setPage((old) => old + 1);
     setIsVowel(vowel);
   };
   const updateAnswer = (choice: string) => {
     setAnswer((oldAnswer) => {
-      return oldAnswer + " " + choice
-    })
-  }
+      return oldAnswer + " " + choice;
+    });
+  };
+  const showAnswer = (): string => {
+    return `${ipaSymbol.articulation.firstDimension} ${
+      ipaSymbol.articulation.secondDimension
+    } ${ipaSymbol.articulation.thirdDimension} ${
+      ipaSymbol.type === "vowel" ? "vowel" : ""
+    }`;
+  };
   useEffect(() => {
     if (page === 4) {
-      const answerString = `${ipaSymbol.articulation.firstDimension} ${ipaSymbol.articulation.secondDimension} ${ipaSymbol.articulation.thirdDimension}`
-      console.log(answerString, answer)
+      const answerString = `${ipaSymbol.articulation.firstDimension} ${ipaSymbol.articulation.secondDimension} ${ipaSymbol.articulation.thirdDimension}`;
+      console.log(answerString, answer);
       if (answerString === answer.trim()) {
-        setIsCorrect("correct")
-      }
-      else {
-        setIsCorrect("incorrect")
+        setIsCorrect("correct");
+      } else {
+        setIsCorrect("incorrect");
       }
     }
-  }, [page])
+  }, [page]);
 
   return (
     <div className="game-container">
+      <div className="preset-container">
+        <button
+          onClick={() => {
+            setAnswer("");
+            setPage(0);
+            setIpaSet(getPhoneticsPreset());
+            setIsCorrect("pending");
+            setIpaSymbol(nextSymbol());
+          }}
+          className="preset-btn btn"
+        >
+          Phonetics Preset
+        </button>
+        <button
+          onClick={() => {
+            setAnswer("");
+            setPage(0);
+            setIpaSet();
+            setIsCorrect("pending");
+            setIpaSymbol(nextSymbol());
+          }}
+          className="preset-btn btn"
+        >
+          All IPA Symbols
+        </button>
+      </div>
       <div className="prompt-container">
-        <div className="ipa-prompt ipa">{ipaSymbol.symbol}</div>
+        <div className="ipa-prompt ipa" onClick={() => playAudio(ipaSymbol)}>{ipaSymbol.symbol}</div>
       </div>
       <div className="answer-container">
         <div className={`answer-prompt ${isCorrect}`}>{answer}</div>
+        {page === 4?<div className="correct-answer-prompt">{showAnswer()}</div>:undefined}
       </div>
       <div className="button-container">
         {page === 0 && <SymbolTypeButtons nextPage={nextPage} />}
@@ -84,10 +113,10 @@ function Game() {
 
         <button
           onClick={() => {
-            setAnswer("")
-            setPage(0)
+            setAnswer("");
+            setPage(0);
             setIpaSymbol(nextSymbol());
-            setIsCorrect("pending")
+            setIsCorrect("pending");
           }}
           className="next-symbol-btn btn"
         >

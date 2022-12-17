@@ -1,7 +1,7 @@
-import React from 'react'
-import './App.css'
-import Navbar from "./components/Navbar"
-import Game from './components/Game'
+import React from "react";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Game from "./components/Game";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Navbar />
       <Game />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

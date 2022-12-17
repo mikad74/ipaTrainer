@@ -4,7 +4,7 @@ type Articulation = {
   thirdDimension: string;
 };
 
-type ipaEntry = {
+type IpaEntry = {
   id: number;
   symbol: string;
   type: string;

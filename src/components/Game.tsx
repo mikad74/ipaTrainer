@@ -5,12 +5,13 @@ import SymbolTypeButtons from "./SymbolTypeButtons";
 import VowelButtons from "./VowelButtons";
 import ConsonantButtons from "./ConsonantButtons";
 import playAudio from "./playAudio"
+import checkAnswer from "./checkAnswer"
 import getPhoneticsPreset from "../data/presets/phonetics"
 import "./Game.css";
 
 function setupGame() {
   // const symbols: Array<ipaEntry> = getIpaSymbols();
-  const [symbols, setSymbols] = useState(getIpaSymbols());
+  const [symbols, setSymbols] = useState(getIpaSymbols(getPhoneticsPreset()));
   const [choices, setChoices] = useState(generateChoices(symbols))
   const nextSymbol = () => {
     const randomIndex: number = Math.floor(Math.random() * symbols.length);
@@ -49,8 +50,8 @@ function Game() {
   useEffect(() => {
     if (page === 4) {
       const answerString = `${ipaSymbol.articulation.firstDimension} ${ipaSymbol.articulation.secondDimension} ${ipaSymbol.articulation.thirdDimension}`;
-      console.log(answerString, answer);
-      if (answerString === answer.trim()) {
+      const result = checkAnswer(answerString, answer.trim())
+      if (result) {
         setIsCorrect("correct");
       } else {
         setIsCorrect("incorrect");

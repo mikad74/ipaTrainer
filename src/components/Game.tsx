@@ -11,13 +11,14 @@ import "./Game.css";
 function setupGame() {
   // const symbols: Array<ipaEntry> = getIpaSymbols();
   const [symbols, setSymbols] = useState(getIpaSymbols());
-  const choices = generateChoices(symbols);
+  const [choices, setChoices] = useState(generateChoices(symbols))
   const nextSymbol = () => {
     const randomIndex: number = Math.floor(Math.random() * symbols.length);
     return symbols[randomIndex];
   };
   const setIpaSet = (ipaSet?: Array<number>) => {
     setSymbols(getIpaSymbols(ipaSet));
+    setChoices(generateChoices(symbols))
   };
   return { nextSymbol, choices, setIpaSet };
 }

@@ -28,4 +28,12 @@
 ***** Place:
 ***** Voicing
 
+** today
+   - [x] implement phonetics preset
+   - [x] fix sound files
+   - [x] show correct answer
+   - [ ] go back
+   - [ ] make ur answer vs correct answer more clear
+** BUGS:
+   - [ ] Check buttons to be working
   

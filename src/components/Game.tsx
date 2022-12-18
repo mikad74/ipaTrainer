@@ -24,7 +24,7 @@ function setupGame() {
 }
 
 function Game() {
-  const inputHistory: string[] = [];
+  const [inputHistory, setInputHistory] = useState<string[]>([]);
   const { nextSymbol, choices, setIpaSet } = setupGame();
   const [ipaSymbol, setIpaSymbol] = useState(nextSymbol());
   const [answer, setAnswer] = useState("");
@@ -37,12 +37,16 @@ function Game() {
   };
   const updateAnswer = (choice: string) => {
     setAnswer((oldAnswer) => {
-      inputHistory.push(choice);
+      setInputHistory((oldInputHistory) => {
+        oldInputHistory.push(choice);
+        return oldInputHistory;
+      });
       return oldAnswer + " " + choice;
     });
   };
 
   const undo = () => {
+    console.log(inputHistory);
     inputHistory.pop();
     if (inputHistory.length > 0) {
       let newAnswer = "";
@@ -52,7 +56,7 @@ function Game() {
       setPage((oldPage) => (oldPage > 0 ? oldPage - 1 : 0));
       setAnswer(newAnswer);
     } else {
-      setPage((oldPage) => (oldPage > 0 ? oldPage - 1 : 0));
+      setPage(0);
       setAnswer("");
     }
   };
@@ -70,6 +74,7 @@ function Game() {
     }`;
   };
   useEffect(() => {
+    console.log(inputHistory);
     if (page === 4) {
       const answerString = `${ipaSymbol.articulation.firstDimension} ${ipaSymbol.articulation.secondDimension} ${ipaSymbol.articulation.thirdDimension}`;
       const result = checkAnswer(answerString, answer.trim());
@@ -78,7 +83,7 @@ function Game() {
       } else {
         setIsCorrect("incorrect");
       }
-    }
+    } else setIsCorrect("pending");
   }, [page]);
 
   return (

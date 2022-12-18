@@ -91,8 +91,8 @@ function Game() {
         </button>
       </div>
       <div className="answer-container">
-        <div className={`answer-prompt ${isCorrect}`}>{answer}</div>
         {page === 4?<div className="correct-answer-prompt">{showAnswer()}</div>:undefined}
+        <div className={`answer-prompt ${isCorrect}`}>{answer}</div>
       </div>
       <div className="button-container">
         {page === 0 && <SymbolTypeButtons nextPage={nextPage} />}

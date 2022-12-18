@@ -1,13 +1,13 @@
 .game-container {
-  width: min(calc(100% - 4rem), 1000px);
-  height: min(100%, 800px);
-  padding: 0 2rem;
+  width: 100%;
+  height: 100%;
   background-color: var(--tertiary-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   position: relative;
+  margin: auto;
 }
 
 .prompt-container,
@@ -48,14 +48,21 @@
 
 .correct-answer-prompt,
 .answer-prompt {
-  width: 80%;
+  width: 100%;
   font-size: 2rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-align: center;
 }
 
+.answer-prompt {
+  margin-top: .5rem;
+  background-color: var(--highlight-color);
+  border-radius: 8px;
+  line-height: 3rem;
+}
+
 .correct-answer-prompt {
-  font-style: italic;
+  font-weight: 600;
 }
 
 .incorrect {
@@ -120,3 +127,41 @@
   margin: 0 1.25rem;
 }
 
+@media all and (min-width: 768px) {
+  .game-container {
+    border-radius: 8px;
+    width: 780px;
+    height: min(100%, 81rem)
+  }
+
+  .prompt-container {
+    margin: 2rem 0;
+  }
+  .preset-container {
+    margin-bottom: 2rem;
+  }
+  .answer-container {
+    margin-bottom: 4rem;
+  }
+
+  .correct-answer-prompt {
+    font-size: 3rem;
+  }
+
+  .answer-prompt {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+
+
+  .answer-buttons {
+    grid-template-columns: auto auto auto;
+  }
+
+  .btn {
+    width: 16rem;
+    height: 6rem;
+    font-size: 2rem;
+  }
+
+}

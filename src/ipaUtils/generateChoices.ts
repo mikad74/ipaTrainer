@@ -31,11 +31,11 @@ function generateChoices(symbols: Array<IpaEntry>) {
         !choices.consonants.voicing.includes(symbol.articulation.firstDimension)
       ) {
         if(symbol.articulation.firstDimension) choices.consonants.voicing.push(symbol.articulation.firstDimension);
-      } else if (
+      } if (
         !choices.consonants.place.includes(symbol.articulation.secondDimension)
       ) {
         choices.consonants.place.push(symbol.articulation.secondDimension);
-      } else if (
+      } if (
         !choices.consonants.manner.includes(symbol.articulation.thirdDimension)
       ) {
         choices.consonants.manner.push(symbol.articulation.thirdDimension);

@@ -17,8 +17,10 @@ function setupGame() {
     return symbols[randomIndex];
   };
   const setIpaSet = (ipaSet?: Array<number>) => {
-    setSymbols(getIpaSymbols(ipaSet));
-    setChoices(generateChoices(symbols));
+    const newSymbols = getIpaSymbols(ipaSet)
+    setSymbols(newSymbols);
+    const newChoices = generateChoices(newSymbols)
+    setChoices(newChoices);
   };
   return { nextSymbol, choices, setIpaSet };
 }
@@ -74,7 +76,6 @@ function Game() {
     }`;
   };
   useEffect(() => {
-    console.log(inputHistory);
     if (page === 4) {
       const answerString = `${ipaSymbol.articulation.firstDimension} ${ipaSymbol.articulation.secondDimension} ${ipaSymbol.articulation.thirdDimension}`;
       const result = checkAnswer(answerString, answer.trim());

@@ -2,11 +2,11 @@
   width: min(calc(100% - 4rem), 1000px);
   height: min(100%, 800px);
   padding: 0 2rem;
-  border-radius: 10px;
   background-color: var(--tertiary-color);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   position: relative;
 }
 
@@ -16,37 +16,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
 }
 
 .prompt-container {
   height: 10rem;
   width: 60%;
-  margin: 1rem 0 2rem 0 ;
+  margin: 1rem 0 1rem 0 ;
   background-color: var(--highlight-color);
   border-radius: 8px;
 }
 
+.ipa {
+  font-family: "Noto Serif";
+  font-size: 3rem;
+}
+
 .answer-container {
   height: 10rem;
+  width: 80%;
   margin-bottom: 2rem;
   flex-direction: column;
 }
 
-.button-container {
-  height: auto;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  bottom: 1rem;
-  max-width: 51rem;
-}
-
-/* .consonant-buttons, */
-/* .vowel-buttons { */
-/*   margin: auto auto; */
-/*   padding: auto auto; */
-/* } */
 
 .ipa-prompt {
   height: 8rem;
@@ -74,16 +66,34 @@
   color: #3e4837;
 }
 
-.btn {
-  width: 16rem;
-  height: 6rem;
+/* Button stuff */
+.button-container {
+  height: 42rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  max-width: 51rem;
+  position: relative;
+}
+
+.answer-buttons {
+  display: grid;
+  grid-template-columns: auto  auto;
+  grid-gap: 1rem 1rem;
   margin-bottom: 1rem;
-  margin-right: 1rem;
+}
+
+.answer-buttons > button {
+  margin: 0;
+}
+
+.btn {
+  width: 14rem;
+  height: 4.5rem;
   border-radius: 8px;
   border: none;
   background-color: var(--primary-color);
   color:var(--secondary-color);
-  font-size: 2.0rem;
+  font-size: 1.8rem;
   vertical-align: middle;
 }
 
@@ -100,12 +110,12 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .preset-btn {
-  width: 8rem;
-  height: 6rem;
+  width: 12rem;
+  height: 3rem;
   font-size: 1.4rem;
   margin: 0 1.25rem;
 }

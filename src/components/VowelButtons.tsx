@@ -12,7 +12,7 @@ function VowelButtons({
   submitAnswer: (choice: string) => void;
 }) {
   return (
-    <div className="vowel-buttons">
+    <div className="answer-buttons">
       <>
         {page === 1
           ? choices.height.map((choice, idx) => {

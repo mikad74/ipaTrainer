@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif&family=Secular+One&display=swap");
+
 html,
 body {
   font-size: 62.5%;
@@ -6,6 +8,11 @@ body {
 }
 
 :root {
-  font-family: Noto Serif,
+  font-family: 'Noto Serif';
+  --primary-color: #3e4837;
+  --secondary-color: #f6f3d1;
+  --tertiary-color: #d9b28a;
+  --hover-color: #687f58;
+  --highlight-color: #edd0a8;
 }
 

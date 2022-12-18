@@ -12,7 +12,7 @@ function ConsonantButtons({
   submitAnswer: (choice: string) => void;
 }) {
   return (
-    <div className="consonant-buttons">
+    <div className="answer-buttons">
       <>
         {page === 1
           ? choices.voicing.map((choice, idx) => {

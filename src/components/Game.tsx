@@ -61,6 +61,9 @@ function Game() {
 
   return (
     <div className="game-container">
+      <div className="prompt-container">
+        <div className="ipa-prompt ipa" onClick={() => playAudio(ipaSymbol)}>{ipaSymbol.symbol}</div>
+      </div>
       <div className="preset-container">
         <button
           onClick={() => {
@@ -72,7 +75,7 @@ function Game() {
           }}
           className="preset-btn btn"
         >
-          Phonetics Preset
+          UvA Phonetics
         </button>
         <button
           onClick={() => {
@@ -86,9 +89,6 @@ function Game() {
         >
           All IPA Symbols
         </button>
-      </div>
-      <div className="prompt-container">
-        <div className="ipa-prompt ipa" onClick={() => playAudio(ipaSymbol)}>{ipaSymbol.symbol}</div>
       </div>
       <div className="answer-container">
         <div className={`answer-prompt ${isCorrect}`}>{answer}</div>

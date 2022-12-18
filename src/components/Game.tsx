@@ -40,6 +40,10 @@ function Game() {
       return oldAnswer + " " + choice;
     });
   };
+
+  const undo = () => {
+    console.log("undo")
+  }
   const showAnswer = (): string => {
     return `${ipaSymbol.articulation.firstDimension} ${
       ipaSymbol.articulation.secondDimension
@@ -92,7 +96,10 @@ function Game() {
       </div>
       <div className="answer-container">
         {page === 4?<div className="correct-answer-prompt">{showAnswer()}</div>:undefined}
+        <div className="answer-input-container">
         <div className={`answer-prompt ${isCorrect}`}>{answer}</div>
+        <button className="undo-button btn" onClick={undo}>undo</button>
+        </div>
       </div>
       <div className="button-container">
         {page === 0 && <SymbolTypeButtons nextPage={nextPage} />}

@@ -1,6 +1,4 @@
 function checkAnswer(correctAnswer: string, givenAnswer: string): boolean {
-  console.log(correctAnswer);
-  console.log(givenAnswer);
 
   // If sibilant and given fricative
   if (

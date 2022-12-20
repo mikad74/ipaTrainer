@@ -9,6 +9,7 @@ type IpaEntry = {
   symbol: string;
   type: string;
   articulation: Articulation;
+  audioLink: string;
 };
 
 type Choices = {

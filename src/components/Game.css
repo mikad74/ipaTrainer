@@ -10,6 +10,7 @@
   margin: auto;
 }
 
+.source-container,
 .answer-container,
 .button-container {
   display: flex;
@@ -22,6 +23,11 @@
   grid-template-columns: 20% 60% 20%;
   position: relative;
   width: 100%;
+}
+
+.audio-source {
+  font-size: 1.5rem;
+  color: var(--primary-color);
 }
 
 .score-container {

@@ -37,9 +37,9 @@ function Game() {
   const [currentScore, setCurrentScore] = useState(0);
   const [streak, setStreak] = useState(0);
   const [undos, setUndos] = useState(0);
-  const [undoing, setUndoing] = useState(false)
+  const [undoing, setUndoing] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
-  const [startTime, setStartTime] = useState<number>(Date.now())
+  const [startTime, setStartTime] = useState<number>(Date.now());
 
   useEffect(() => {
     setIpaSet(getPhoneticsPreset());
@@ -48,17 +48,16 @@ function Game() {
     if (highScore) setHighScore(Number(highScore));
   }, []);
 
-  useEffect(()=> {
-    setStartTime(Date.now())
-  },[ipaSymbol])
-
+  useEffect(() => {
+    setStartTime(Date.now());
+  }, [ipaSymbol]);
 
   const nextPage = (vowel: boolean) => {
     setPage((old) => old + 1);
     setIsVowel(vowel);
   };
   const updateAnswer = (choice: string) => {
-    setUndoing(false)
+    setUndoing(false);
     setAnswer((oldAnswer) => {
       setInputHistory((oldInputHistory) => {
         return [...oldInputHistory, choice];
@@ -79,10 +78,10 @@ function Game() {
   };
 
   const undo = () => {
-    console.log(undoing, undos)
+    console.log(undoing, undos);
     if (!undoing) {
-      setUndos((oldUndos) => oldUndos+1)
-      setUndoing(true)
+      setUndos((oldUndos) => oldUndos + 1);
+      setUndoing(true);
     }
     if (inputHistory.length > 0) {
       let newAnswer = "";
@@ -92,7 +91,7 @@ function Game() {
       });
       setPage((oldPage) => (oldPage > 0 ? oldPage - 1 : 0));
       setAnswer(newAnswer);
-      const newHistory = [...inputHistory.slice(0,-1)]
+      const newHistory = [...inputHistory.slice(0, -1)];
       setInputHistory(newHistory);
     } else {
       setPage((oldPage) => (oldPage > 0 ? oldPage - 1 : 0));
@@ -101,7 +100,7 @@ function Game() {
   };
 
   const clearHistory = () => {
-    setInputHistory([])
+    setInputHistory([]);
   };
   const getAnswer = (showVowel = true): string => {
     return `${ipaSymbol.articulation.firstDimension} ${
@@ -112,31 +111,34 @@ function Game() {
   };
 
   const updateScore = (correct: boolean): void => {
-    const timeTaken = (Date.now() - startTime) / 1000
+    const timeTaken = (Date.now() - startTime) / 1000;
     if (correct) {
-      let undoMultiplier: number
-      switch (undos){
+      let undoMultiplier: number;
+      switch (undos) {
         case 0:
-          undoMultiplier = 1.5
+          undoMultiplier = 1.5;
           break;
-        case 1: 
-          undoMultiplier = 1.2
+        case 1:
+          undoMultiplier = 1.2;
           break;
         case 2:
-          undoMultiplier = 1
+          undoMultiplier = 1;
           break;
         default:
           undoMultiplier = 0.75;
       }
-      let timeMultiplier: number
-      if (timeTaken<= 5) timeMultiplier = 2
+      let timeMultiplier: number;
+      if (timeTaken <= 5) timeMultiplier = 2;
       else if (timeTaken > 5 && timeTaken <= 10) {
-        timeMultiplier = 2 - (timeTaken - 5) * 0.2
-      }
-      else timeMultiplier = 1
+        timeMultiplier = 2 - (timeTaken - 5) * 0.2;
+      } else timeMultiplier = 1;
       setCurrentScore((oldScore) => {
         const newScore = Math.floor(
-          oldScore + 100 * (1 + Math.floor(streak / 5) / 10) * undoMultiplier * timeMultiplier
+          oldScore +
+            100 *
+              (1 + Math.floor(streak / 5) / 10) *
+              undoMultiplier *
+              timeMultiplier
         );
         if (newScore > highScore) {
           localStorage.setItem("highScore", `${newScore}`);
@@ -175,6 +177,9 @@ function Game() {
         </div>
         <div className="ipa-prompt ipa" onClick={() => playAudio(ipaSymbol)}>
           {ipaSymbol.symbol}
+        </div>
+          <div className="source-container">
+          <a href={`https://en.wikipedia.org${ipaSymbol.audioLink}`} className="audio-source">Audio Source</a>
         </div>
       </div>
 

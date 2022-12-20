@@ -30,14 +30,28 @@
 ***** Voicing
 
 ** today
-   - [ ] Fix IPA JSON
-   - [ ] Go over CSS
+   - [x] Fix IPA JSON
    - [ ] highscore
+   - [ ] show answer
+   - [ ] check mark and cross for right wrong
    - [ ] strict and easy mode
+   - [ ] Go over CSS
 ** BUGS:
    - [ ] Check buttons to be working
    - [ ] Revamp the ipa files
 ** Plans
    - [ ] strict vs easy mode
 
-  
+
+** Scoring elements
+*** Correct
+**** 100 points
+*** Speed
+**** From 2 -> 5 second multiplier decreasing from 2 -> 1
+*** Undos (lives)
+**** 0 -> 1.5
+**** 1 -> 1.2
+**** 2 -> 1
+**** 3+ -> 0.75 
+*** streak 
+**** every 10 in a row score multiplier goes up by 10 ppt

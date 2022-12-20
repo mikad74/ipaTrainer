@@ -58,7 +58,7 @@ function Game() {
       setPage((oldPage) => (oldPage > 0 ? oldPage - 1 : 0));
       setAnswer(newAnswer);
     } else {
-      setPage(0);
+      setPage((oldPage) => (oldPage > 0 ? oldPage - 1 : 0));
       setAnswer("");
     }
   };

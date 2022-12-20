@@ -2,18 +2,19 @@
 - [x] IPA font
 ** Layout
    - [ ] Homepage
-   - [ ] vowels
-   - [ ] consonants
+   - [x] vowels
+   - [x] consonants
    - [ ] everything
 ** Back-End
-   - [ ] IPA JSON
-   - [ ] soundfiles
+   - [x] IPA JSON
+   - [ ] fix IPA JSON
+   - [x] soundfiles
    - [ ] Server side?
 ** Game Page
-   - [ ] Symbol
-   - [ ] Vowel or Consonant
-   - [ ] 3D Description
-   - [ ] Verify Answer
+   - [x] Symbol
+   - [x] Vowel or Consonant
+   - [x] 3D Description
+   - [x] Verify Answer
 ** Gameify
    - [ ] Score system
    - [ ] Save data
@@ -29,11 +30,14 @@
 ***** Voicing
 
 ** today
-   - [x] implement phonetics preset
-   - [x] fix sound files
-   - [x] show correct answer
-   - [ ] go back
-   - [ ] make ur answer vs correct answer more clear
+   - [ ] Fix IPA JSON
+   - [ ] Go over CSS
+   - [ ] highscore
+   - [ ] strict and easy mode
 ** BUGS:
    - [ ] Check buttons to be working
+   - [ ] Revamp the ipa files
+** Plans
+   - [ ] strict vs easy mode
+
   

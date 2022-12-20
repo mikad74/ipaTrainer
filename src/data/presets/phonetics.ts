@@ -1,72 +1,10 @@
+import getIpaIdFromList from "../../ipaUtils/getIpaIdFromList"
+
 function getPhoneticsPreset() {
-  const ipaIds: Array<number> = [
-    // vowels
-    0,
-    1,
-    3,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    14,
-    17,
-    20,
-    21,
-    24,
-    25,
-    26,
-    28,
-    31,
-    32,
-
-    // consonants
-    33,
-    34,
-    37,
-    39,
-    42,
-    43,
-    44,
-    45,
-    52,
-    53,
-    54,
-    57,
-    58,
-    59,
-    62,
-    63,
-    79,
-    80,
-    81,
-    82,
-    89,
-    90,
-    92,
-    93,
-    100,
-    101,
-    102,
-    103,
-    104,
-    105,
-    108,
-    109,
-    111,
-    113,
-    115,
-    116,
-    121,
-    127,
-    130,
-    140,
-    144,
-    152,
-    153,
-
-  ]
+  const symbolList = [ "i","y","ʉ","u","ɪ","ʏ","ʊ","e","ø","ə","o","ɛ","œ","ʌ","ɔ","æ","a","ɑ","ɒ","p","t","k","q","ʔ","b","d","g","f","θ","s","ʃ","ç","x","χ","h","v","ð","z","ʒ" ,"ʝ","ɣ","ʁ","ɦ" ,"t","s","t","ʃ","d","z","d","ʒ","m","ɱ","n","ɲ","ŋ","w","ʋ","ɹ","ɻ","j","ɥ","l","ɫ","ʎ","r","ʀ","ɾ" ]
+  const ipaIds = getIpaIdFromList(symbolList)
+  // console.log(ipaIds)
+  // console.log(symbolList.length, ipaIds.length)
   return ipaIds
 }
 

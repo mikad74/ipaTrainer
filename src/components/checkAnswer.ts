@@ -11,8 +11,11 @@ function checkAnswer(correctAnswer: string, givenAnswer: string): boolean {
     correctAnswer = correctAnswer.replace("sibilant", "");
     givenAnswer = givenAnswer.replace("sibilant", "");
     givenAnswer = givenAnswer.replace("fricative", "");
-    console.log(correctAnswer, givenAnswer)
-    return correctAnswer === givenAnswer ? true : false;
+    console.log(correctAnswer, givenAnswer);
+    return correctAnswer.replace(/ /g, "").toLowerCase() ===
+      givenAnswer.replace(/ /g, "").toLowerCase()
+      ? true
+      : false;
   }
   if (
     correctAnswer.includes("sibilant affricate") &&
@@ -22,9 +25,15 @@ function checkAnswer(correctAnswer: string, givenAnswer: string): boolean {
     correctAnswer = correctAnswer.replace("sibilant affricate", "");
     givenAnswer = givenAnswer.replace("sibilant", "");
     givenAnswer = givenAnswer.replace("affricate", "");
-    return correctAnswer === givenAnswer ? true : false;
+    return correctAnswer.replace(/ /g, "").toLowerCase() ===
+      givenAnswer.replace(/ /g, "").toLowerCase()
+      ? true
+      : false;
   }
-  return correctAnswer === givenAnswer ? true : false;
+  return correctAnswer.replace(/ /g, "").toLowerCase() ===
+    givenAnswer.replace(/ /g, "").toLowerCase()
+    ? true
+    : false;
 }
 
 export default checkAnswer;

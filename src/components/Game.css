@@ -25,9 +25,14 @@
   width: 100%;
 }
 
+.sibilant,
 .audio-source {
   font-size: 1.5rem;
   color: var(--primary-color);
+}
+
+.sibilant {
+  margin-bottom: 1rem;
 }
 
 .score-container {
@@ -171,7 +176,7 @@
   .game-container {
     border-radius: 8px;
     width: 780px;
-    height: min(100%, 78rem);
+    height: min(100%, 84rem);
   }
 
   .prompt-container {
@@ -208,11 +213,18 @@
     height: 6rem;
     font-size: 2rem;
   }
+
+  .show-answer-btn,
   .preset-btn {
     width: 12rem;
     height: 3rem;
     font-size: 1.4rem;
   }
+
+  .show-answer-btn {
+    margin-bottom: 1rem;
+  }
+
 
   .undo-button {
     height: 4rem;

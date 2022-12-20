@@ -209,6 +209,7 @@ function Game() {
             Show Answer
           </button>
         ) : undefined}
+        <a href="https://en.wikipedia.org/wiki/IPA_pulmonic_consonant_chart_with_audio" rel="noreferrer noopener" target="_blank" className="sibilant">Help! What is a sibilant</a>
         <div className="answer-input-container">
           <div className={`answer-prompt ${isCorrect}`}>{answer}</div>
           <button className="undo-button btn" onClick={() => undo()}>

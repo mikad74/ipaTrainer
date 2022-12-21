@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "ogv": "^1.8.9",
     "react": "^18.2.0",
+    "react-div-100vh": "^0.7.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {

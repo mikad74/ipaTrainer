@@ -103,7 +103,7 @@
     "symbol": "ʈʂ",
     "type": "consonant",
     "articulation": {
-      "manner": "affricate",
+      "manner": "sibilant affricate",
       "place": "retroflex",
       "voicing": "Voiceless"
     },
@@ -169,7 +169,7 @@
     "symbol": "dʒ",
     "type": "consonant",
     "articulation": {
-      "manner": "affricate",
+      "manner": "sibilant affricate",
       "place": "postalveolar",
       "voicing": "Voiced"
     },
@@ -180,7 +180,7 @@
     "symbol": "ɖʐ",
     "type": "consonant",
     "articulation": {
-      "manner": "affricate",
+      "manner": "sibilant affricate",
       "place": "retroflex",
       "voicing": "Voiced"
     },
@@ -280,7 +280,7 @@
     "symbol": "dʑ",
     "type": "consonant",
     "articulation": {
-      "manner": "affricate",
+      "manner": "sibilant affricate",
       "place": "alveolo-palatal",
       "voicing": "Voiced"
     },
@@ -291,7 +291,7 @@
     "symbol": "ɟʝ",
     "type": "consonant",
     "articulation": {
-      "manner": "affricate",
+      "manner": "sibilant affricate",
       "place": "palatal",
       "voicing": "Voiced"
     },
@@ -313,7 +313,7 @@
     "symbol": "tɕ",
     "type": "consonant",
     "articulation": {
-      "manner": "affricate",
+      "manner": "sibilant affricate",
       "place": "alveolo-palatal",
       "voicing": "Voiceless"
     },
@@ -467,7 +467,7 @@
     "symbol": "tʃ",
     "type": "consonant",
     "articulation": {
-      "manner": "affricate",
+      "manner": "sibilant affricate",
       "place": "postalveolar",
       "voicing": "Voiceless"
     },
@@ -478,7 +478,7 @@
     "symbol": "dʒ",
     "type": "consonant",
     "articulation": {
-      "manner": "affricate",
+      "manner": "sibilnat affricate",
       "place": "postalveolar",
       "voicing": "Voiced"
     },
@@ -658,7 +658,7 @@
     "symbol": "tʃ",
     "type": "consonant",
     "articulation": {
-      "manner": "affricate",
+      "manner": "sibilant affricate",
       "place": "postalveolar",
       "voicing": "Voiceless"
     },

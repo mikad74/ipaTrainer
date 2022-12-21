@@ -10,6 +10,10 @@
   margin: auto;
 }
 
+.game-container::-webbkit-scrollbar {
+  display: none;
+}
+
 .source-container,
 .answer-container,
 .button-container {
@@ -120,6 +124,11 @@
   grid-gap: 1rem 1rem;
   margin-bottom: 1rem;
   overflow: scroll;
+  scrollbar-width: none;
+}
+
+.answer-buttons::-webkit-scrollbar {
+  display:none
 }
 
 .answer-buttons > button {

@@ -5,14 +5,17 @@ body {
   font-size: 62.5%;
   margin: 0;
   padding: 0;
+  scrollbar-width: none;
 }
 
 :root {
-  font-family: 'Noto Serif';
+  font-family: "Noto Serif";
   --primary-color: #3e4837;
   --secondary-color: #f6f3d1;
   --tertiary-color: #d9b28a;
   --hover-color: #687f58;
   --highlight-color: #edd0a8;
 }
-
+body::-webkit-scrollbar {
+  display: none;
+}

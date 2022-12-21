@@ -9,10 +9,10 @@
 }
 
 .navbar {
+  display: none;
   background-color: var(--primary-color);
   height: 4rem;
   color: var(--secondary-color);
-  display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
@@ -32,4 +32,10 @@
   background-color: var(--secondary-color);
   position: absolute;
   right: .5rem;
+}
+
+@media all and (min-height: 800px) {
+  .navbar {
+    display: flex
+  }
 }

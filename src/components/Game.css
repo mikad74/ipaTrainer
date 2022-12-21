@@ -10,7 +10,7 @@
   margin: auto;
 }
 
-.game-container::-webbkit-scrollbar {
+.game-container::-webkit-scrollbar {
   display: none;
 }
 
@@ -115,7 +115,7 @@
   justify-content: flex-end;
   max-width: 51rem;
   position: relative;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .answer-buttons {
@@ -125,6 +125,7 @@
   margin-bottom: 1rem;
   overflow: scroll;
   scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .answer-buttons::-webkit-scrollbar {
@@ -233,7 +234,7 @@
   }
 
   .show-answer-btn {
-    margin-bottom: 1rem;
+    margin-bottom: 1.001rem;
   }
 
   .undo-button {

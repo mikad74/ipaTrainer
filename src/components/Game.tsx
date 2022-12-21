@@ -10,7 +10,7 @@ import getPhoneticsPreset from "../data/presets/phonetics";
 import "./Game.css";
 
 function setupGame() {
-  const [symbols, setSymbols] = useState(getIpaSymbols([123,133,155,154,150,151,152,139,147,142,148,149,141,131,145,140,136,153,137,12,33,14,36,35,10,18,60,61,91,93,100,94,95,70,80,110,69,88,99,101,82,33,33,91,18,110,18,69,5,6,27,21,13,103,83,104,89,112,90,117,121,105,113,102,109]));
+  const [symbols, setSymbols] = useState(getIpaSymbols([123,133,155,154,150,151,152,139,147,142,148,149,141,131,145,140,136,153,137,12,33,14,36,10,18,60,61,91,93,100,94,95,70,80,110,69,88,99,101,82,33,33,91,18,110,18,69,5,6,27,21,13,103,83,104,89,112,90,117,121,105,113,102,109]));
   const [choices, setChoices] = useState(generateChoices(symbols));
   const nextSymbol = () => {
     const randomIndex: number = Math.floor(Math.random() * symbols.length);
@@ -178,7 +178,7 @@ function Game() {
           {ipaSymbol.symbol}
         </div>
           <div className="source-container">
-          <a href={`https://en.wikipedia.org${ipaSymbol.audioLink}`} className="audio-source">Audio Source</a>
+          <a href={`https://en.wikipedia.org${ipaSymbol.audioLink}`}rel="noreferrer noopener" target="_blank" className="audio-source">Audio Source</a>
         </div>
       </div>
 

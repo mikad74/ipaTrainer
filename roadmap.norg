@@ -30,17 +30,14 @@
 ***** Voicing
 
 ** today
-   - [x] Fix IPA JSON
-   - [ ] highscore
-   - [ ] show answer
    - [ ] check mark and cross for right wrong
    - [ ] strict and easy mode
-   - [ ] Go over CSS
 ** BUGS:
-   - [ ] Check buttons to be working
    - [ ] Revamp the ipa files
+   - [ ] You can increment the score by undoing a correct answer
 ** Plans
    - [ ] strict vs easy mode
+   - [ ] 6 undos and you're out
 
 
 ** Scoring elements

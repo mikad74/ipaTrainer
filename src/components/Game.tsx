@@ -9,7 +9,6 @@ import getPhoneticsPreset from "../data/presets/phonetics"
 import "./Game.css";
 
 function setupGame() {
-  // const symbols: Array<ipaEntry> = getIpaSymbols();
   const [symbols, setSymbols] = useState(getIpaSymbols());
   const [choices, setChoices] = useState(generateChoices(symbols))
   const nextSymbol = () => {

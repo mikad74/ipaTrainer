@@ -396,17 +396,6 @@
     "audioLink": "/wiki/File:Linguolabial_nasal.ogg"
   },
   {
-    "id": 36,
-    "symbol": "n̥",
-    "type": "consonant",
-    "articulation": {
-      "manner": "nasal",
-      "place": "alveolar",
-      "voicing": "Voiceless"
-    },
-    "audioLink": "/wiki/File:Doulos_SIL_%E2%80%94_n%CC%A5.svg"
-  },
-  {
     "id": 37,
     "symbol": "n",
     "type": "consonant",
@@ -485,25 +474,25 @@
   },
   {
     "id": 44,
-    "symbol": "t",
+    "symbol": "t̪",
     "type": "consonant",
     "articulation": {
       "manner": "plosive",
-      "place": "alveolar",
+      "place": "dental",
       "voicing": "Voiceless"
     },
-    "audioLink": "/wiki/File:Voiceless_alveolar_plosive.ogg"
+    "audioLink": "/wiki/File:Voiceless_dental_stop.ogg"
   },
   {
     "id": 45,
-    "symbol": "d",
+    "symbol": "d̪",
     "type": "consonant",
     "articulation": {
       "manner": "plosive",
-      "place": "alveolar",
+      "place": "dental",
       "voicing": "Voiced"
     },
-    "audioLink": "/wiki/File:Voiced_alveolar_plosive.ogg"
+    "audioLink": "/wiki/File:Voiced_dental_stop.ogg"
   },
   {
     "id": 46,
@@ -637,25 +626,25 @@
   },
   {
     "id": 58,
-    "symbol": "ts",
+    "symbol": "t̪s̪",
     "type": "consonant",
     "articulation": {
       "manner": "sibilant affricate",
-      "place": "alveolar",
+      "place": "dental",
       "voicing": "Voiceless"
     },
-    "audioLink": "/wiki/File:Voiceless_alveolar_sibilant_affricate.oga"
+    "audioLink": "/wiki/File:Voiceless_dental_sibilant_affricate.oga"
   },
   {
     "id": 59,
-    "symbol": "dz",
+    "symbol": "d̪z̪",
     "type": "consonant",
     "articulation": {
       "manner": "sibilant affricate",
-      "place": "alveolar",
+      "place": "dental",
       "voicing": "Voiced"
     },
-    "audioLink": "/wiki/File:Voiced_alveolar_sibilant_affricate.oga"
+    "audioLink": "/wiki/File:Voiced_dental_sibilant_affricate.oga"
   },
   {
     "id": 60,
@@ -747,47 +736,80 @@
   },
   {
     "id": 68,
-    "symbol": "ts",
+    "symbol": "pɸ",
     "type": "consonant",
     "articulation": {
-      "manner": "sibilant affricate",
-      "place": "alveolar",
+      "manner": "affricate",
+      "place": "bilabial",
       "voicing": "Voiceless"
     },
-    "audioLink": "/wiki/File:Voiceless_alveolar_sibilant_affricate.oga"
+    "audioLink": "/wiki/File:Voiceless_bilabialaffricate.ogg"
   },
   {
     "id": 69,
-    "symbol": "dz",
+    "symbol": "p̪͡f",
     "type": "consonant",
     "articulation": {
-      "manner": "sibilant affricate",
-      "place": "alveolar",
-      "voicing": "Voiced"
+      "manner": "affricate",
+      "place": "labiodental",
+      "voicing": "Voiceless"
     },
-    "audioLink": "/wiki/File:Voiced_alveolar_sibilant_affricate.oga"
+    "audioLink": "/wiki/File:Voiceless_labiodental_affricate.ogg"
   },
   {
-    "id": 70,
-    "symbol": "tʃ",
+    "id": 156,
+    "symbol": "b̪͡v",
     "type": "consonant",
     "articulation": {
-      "manner": "sibilant affricate",
+      "manner": "affricate",
+      "place": "labiodental",
+      "voicing": "Voiced"
+    },
+    "audioLink": "/wiki/File:Voiced_labiodental_affricate.ogg"
+  }, 
+  {
+    "id": 157,
+    "symbol": "t̪θ",
+    "type": "consonant",
+    "articulation": {
+      "manner": "affricate",
+      "place": "dental",
+      "voicing": "Voiceless"
+    },
+    "audioLink": "/wiki/File:Voiceless_dental_non-sibilant_affricate.ogg"
+  }, 
+  {
+    "id": 158,
+    "symbol": "d̪ð",
+    "type": "consonant",
+    "articulation": {
+      "manner": "affricate",
+      "place": "dental",
+      "voicing": "Voiced"
+    },
+    "audioLink": "/wiki/File:Voiced_dental_non-sibilant_affricate.ogg"
+  }, 
+  {
+    "id": 70,
+    "symbol": "tɹ̝̊˗",
+    "type": "consonant",
+    "articulation": {
+      "manner": "affricate",
       "place": "postalveolar",
       "voicing": "Voiceless"
     },
-    "audioLink": "/wiki/File:Voiceless_palato-alveolar_affricate.ogg"
+    "audioLink": "/wiki/File:Voiceless_post-alveolar_non-sibilant_affricate.ogg"
   },
   {
     "id": 71,
-    "symbol": "dʒ",
+    "symbol": "dɹ̝˗",
     "type": "consonant",
     "articulation": {
-      "manner": "sibilant affricate",
+      "manner": "affricate",
       "place": "postalveolar",
       "voicing": "Voiced"
     },
-    "audioLink": "/wiki/File:Voiced_palato-alveolar_affricate.ogg"
+    "audioLink": "/wiki/File:Voiced_post-alveolar_non-sibilant_affricate.ogg"
   },
   {
     "id": 72,
@@ -843,6 +865,17 @@
       "voicing": "Voiceless"
     },
     "audioLink": "/wiki/File:Voiceless_uvular_affricate.ogg"
+  },
+  {
+    "id": 159,
+    "symbol": "ʡʜ",
+    "type": "consonant",
+    "articulation": {
+      "manner": "affricate",
+      "place": "epiglottal",
+      "voicing": "Voiceless"
+    },
+    "audioLink": "/wiki/File:Voiceless_epiglottal_affricate.ogg"
   },
   {
     "id": 77,
@@ -1033,69 +1066,47 @@
   },
   {
     "id": 94,
-    "symbol": "s",
+    "symbol": "θ̠",
     "type": "consonant",
     "articulation": {
-      "manner": "sibilant",
+      "manner": "fricative",
       "place": "alveolar",
       "voicing": "Voiceless"
     },
-    "audioLink": "/wiki/File:Voiceless_alveolar_sibilant.ogg"
+    "audioLink": "/wiki/File:Voiceless_alveolar_non-sibilant_fricative.ogg"
   },
   {
     "id": 95,
-    "symbol": "z",
+    "symbol": "ð̠",
     "type": "consonant",
     "articulation": {
-      "manner": "sibilant",
+      "manner": "fricative",
       "place": "alveolar",
       "voicing": "Voiced"
     },
-    "audioLink": "/wiki/File:Voiced_alveolar_sibilant.ogg"
+    "audioLink": "/wiki/File:Voiced_alveolar_non-sibilant_fricative.ogg"
   },
   {
     "id": 96,
-    "symbol": "ʃ",
+    "symbol": "ɹ̝̊˗",
     "type": "consonant",
     "articulation": {
-      "manner": "sibilant",
+      "manner": "fricative",
       "place": "postalveolar",
       "voicing": "Voiceless"
     },
-    "audioLink": "/wiki/File:Voiceless_palato-alveolar_sibilant.ogg"
+    "audioLink": "/wiki/File:Voiceless_post-alveolar_non-sibilant_fricative.ogg"
   },
   {
     "id": 97,
-    "symbol": "ʒ",
+    "symbol": "ɹ̝˗",
     "type": "consonant",
     "articulation": {
-      "manner": "sibilant",
+      "manner": "fricative",
       "place": "postalveolar",
       "voicing": "Voiced"
     },
-    "audioLink": "/wiki/File:Voiced_palato-alveolar_sibilant.ogg"
-  },
-  {
-    "id": 98,
-    "symbol": "ʂ",
-    "type": "consonant",
-    "articulation": {
-      "manner": "sibilant",
-      "place": "retroflex",
-      "voicing": "Voiceless"
-    },
-    "audioLink": "/wiki/File:Voiceless_retroflex_sibilant.ogg"
-  },
-  {
-    "id": 99,
-    "symbol": "ʐ",
-    "type": "consonant",
-    "articulation": {
-      "manner": "sibilant",
-      "place": "retroflex",
-      "voicing": "Voiced"
-    },
-    "audioLink": "/wiki/File:Voiced_retroflex_sibilant.ogg"
+    "audioLink": "/wiki/File:Voiced_post-alveolar_non-sibilant_fricative.ogg"
   },
   {
     "id": 100,
@@ -1209,14 +1220,14 @@
   },
   {
     "id": 110,
-    "symbol": "β",
+    "symbol": "β̞",
     "type": "consonant",
     "articulation": {
-      "manner": "fricative",
+      "manner": "approximant",
       "place": "bilabial",
       "voicing": "Voiced"
     },
-    "audioLink": "/wiki/File:Voiced_bilabial_fricative.ogg"
+    "audioLink": "/wiki/File:Bilabial_approximant.ogg"
   },
   {
     "id": 111,
@@ -1231,14 +1242,14 @@
   },
   {
     "id": 112,
-    "symbol": "ð",
+    "symbol": "ð̞",
     "type": "consonant",
     "articulation": {
-      "manner": "fricative",
+      "manner": "approximant",
       "place": "dental",
       "voicing": "Voiced"
     },
-    "audioLink": "/wiki/File:Voiced_dental_fricative.ogg"
+    "audioLink": "/wiki/File:Voiced_dental_approximant.ogg"
   },
   {
     "id": 113,
@@ -1253,14 +1264,14 @@
   },
   {
     "id": 114,
-    "symbol": "ɹ",
+    "symbol": "ɹ̠",
     "type": "consonant",
     "articulation": {
       "manner": "approximant",
-      "place": "alveolar",
+      "place": "postalveolar",
       "voicing": "Voiced"
     },
-    "audioLink": "/wiki/File:Alveolar_approximant.ogg"
+    "audioLink": "/wiki/File:Postalveolar_approximant.ogg"
   },
   {
     "id": 115,
@@ -1297,25 +1308,14 @@
   },
   {
     "id": 118,
-    "symbol": "ʁ",
+    "symbol": "ʁ̞",
     "type": "consonant",
     "articulation": {
-      "manner": "fricative",
+      "manner": "approximant",
       "place": "uvular",
       "voicing": "Voiced"
     },
-    "audioLink": "/wiki/File:Voiced_uvular_fricative.ogg"
-  },
-  {
-    "id": 119,
-    "symbol": "ⱱ̟",
-    "type": "consonant",
-    "articulation": {
-      "manner": "flap",
-      "place": "bilabial",
-      "voicing": "Voiced"
-    },
-    "audioLink": "/wiki/File:Doulos_SIL_%E2%80%94_%E2%B1%B1%CC%9F.svg"
+    "audioLink": "/wiki/File:Voiced_uvular_approximant.ogg"
   },
   {
     "id": 120,
@@ -1396,14 +1396,14 @@
   },
   {
     "id": 127,
-    "symbol": "r",
+    "symbol": "r̠",
     "type": "consonant",
     "articulation": {
       "manner": "trill",
-      "place": "alveolar",
+      "place": "postalveolar",
       "voicing": "Voiced"
     },
-    "audioLink": "/wiki/File:Alveolar_trill.ogg"
+    "audioLink": "/wiki/File:Voiced_postalveolar_trill.ogg"
   },
   {
     "id": 128,
@@ -1538,28 +1538,6 @@
     "audioLink": "/wiki/File:Voiceless_velar_lateral_fricative.ogg"
   },
   {
-    "id": 140,
-    "symbol": "l",
-    "type": "consonant",
-    "articulation": {
-      "manner": "lateral approximant",
-      "place": "alveolar",
-      "voicing": "Voiced"
-    },
-    "audioLink": "/wiki/File:Alveolar_lateral_approximant.ogg"
-  },
-  {
-    "id": 141,
-    "symbol": "l",
-    "type": "consonant",
-    "articulation": {
-      "manner": "lateral approximant",
-      "place": "alveolar",
-      "voicing": "Voiced"
-    },
-    "audioLink": "/wiki/File:Alveolar_lateral_approximant.ogg"
-  },
-  {
     "id": 142,
     "symbol": "l",
     "type": "consonant",
@@ -1613,17 +1591,6 @@
       "voicing": "Voiced"
     },
     "audioLink": "/wiki/File:Uvular_lateral_approximant.ogg"
-  },
-  {
-    "id": 147,
-    "symbol": "ɺ",
-    "type": "consonant",
-    "articulation": {
-      "manner": "lateral flap",
-      "place": "alveolar",
-      "voicing": "Voiced"
-    },
-    "audioLink": "/wiki/File:Alveolar_lateral_flap_(vector).svg"
   },
   {
     "id": 148,
